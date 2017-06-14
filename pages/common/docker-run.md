@@ -2,7 +2,7 @@
 
 > Creates and starts a container in one operation.
 
-- The default command will start a new container, run a command in the foreground, and then stop the container when finished:
+- The default `docker run` command will start a new container, run a command in the foreground, and then stop the container when finished:
 
 `docker run {{image_name}} [optional_command_to_run]`
 
