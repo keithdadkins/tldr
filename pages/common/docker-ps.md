@@ -14,6 +14,6 @@
 
 `docker ps -l`
 
-- Tip: Use the -q flag with any `docker ps` command to only display the container id. This is useful for scripts and piping to other docker commands. For example, the following command will show the logs for the most recently created container:
+- Use the -q flag with any `docker ps` command to only return the container id. This is useful when combined with other docker commands. E.g.,:
 
 `docker logs $(docker ps -l -q)`
