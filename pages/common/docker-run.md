@@ -1,8 +1,8 @@
 # docker run
 
-> Creates and starts a container in one operation.
+> Run a command in a new container.
 
-- The default `docker run` command will start a new container, run a command in the foreground, and then stop the container when finished:
+- Start and run a command in a new container:
 
 `docker run {{image_name}} [optional_command_to_run]`
 
@@ -10,14 +10,10 @@
 
 `docker run --name {{container_name}} -d {{image_name}}`
 
-- Start a container and run a shell interactively:
+- Start a container, run a shell interactively, and then delete the container when finished:
 
-`docker run -it {{image_name}} /bin/sh`
+`docker run --rm -it {{image_name}} /bin/sh`
 
-- Start a container, run a command, and delete the container when finished:
+- Example command that maps a local port to a container port, mounts a local directory into the container, and then runs the container detached as a daemon in the background:
 
-`docker run --rm {{image_name}} {{command}}`
-
-- Web server example that starts a named container, maps a local port to a container port, mounts a local directory into the container, and then runs in the background:
-
-`docker run --name {{foo_server}} -p {{80:80}} -v {{/path/to/local/html_files:/var/html}} {{webserver_image_name}}`
+`docker run --name my_web_server -d -p 80:80 -v /path/to/local/html_files:/var/www/html my_httpd_image_name`
